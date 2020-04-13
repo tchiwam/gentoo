@@ -1,0 +1,12 @@
+--- a/CMakeLists.txt	2018-05-20 11:28:02.614120962 +0000
++++ b/CMakeLists.txt	2018-05-20 11:28:58.420670630 +0000
+@@ -84,6 +84,9 @@
+         SET (LIB_INSTALL_DIR "lib")
+       ENDIF (CMAKE_SIZEOF_VOID_P MATCHES "8")
+     ENDIF (EXISTS /etc/redhat-release)
++    IF (EXISTS /etc/gentoo-release)
++      EXECUTE_PROCESS( COMMAND uname -m COMMAND tr -d '\n' OUTPUT_VARIABLE ARCH )
++    ENDIF(EXISTS /etc/gentoo-release)
+   ENDIF (UNIX AND NOT APPLE)
+ endif(NOT WIN32)
+ 

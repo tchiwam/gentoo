@@ -1,0 +1,12 @@
+--- a/ApiExtractor/clangparser/compilersupport.cpp    2018-09-14 02:06:47.943717729 +0300
++++ b/ApiExtractor/clangparser/compilersupport.cpp    2018-09-14 02:07:38.327794194 +0300
+@@ -284,7 +284,8 @@
+         if (!candidate.isEmpty())
+             return candidate + QStringLiteral("/include");
+     }
+-    return QString();
++    return QStringLiteral("/usr/lib/clang/6.0.1/include");
++//    return QString();
+ }
+ #endif // NEED_CLANG_BUILTIN_INCLUDES
+
